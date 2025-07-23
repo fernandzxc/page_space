@@ -1,15 +1,16 @@
 import logo from "../assets/logo/logo1.svg";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center">
-      <figure className="w-1/3 px-15">
-        <img src={logo} />
+    <div className="flex justify-between items-center gap-2">
+      <figure>
+        <img src={logo} className="size-full"/>
       </figure>
-      <hr />
-      <div className="flex gap-5 w-1/2 py-5 justify-center text-white bg-blue-50/10 backdrop-blur-3xl">
-        <a href="">00 HOME</a>
-        <a href="">01 DESTINATION</a>
+      <hr className="border-1 border-gray-500 w-1/2" />
+      <div className="flex gap-16 w-3/4 py-5 justify-center text-white bg-blue-50/10 backdrop-blur-3xl">
+        <Link to='/'>00 HOME</Link>
+        <Link to='/Destination'>01 DESTINATION</Link>
         <a href="">02 CREW</a>
         <a href="">00 TECHNOLOGY</a>
       </div>
