@@ -11,7 +11,7 @@ const Header = () => {
       <div className="flex gap-16 w-3/4 py-5 justify-center text-white bg-blue-50/10 backdrop-blur-3xl">
         <Link to='/'>00 HOME</Link>
         <Link to='/Destination'>01 DESTINATION</Link>
-        <a href="">02 CREW</a>
+        <Link to='/Crew'>02 CREW</Link>
         <a href="">00 TECHNOLOGY</a>
       </div>
     </div>
