@@ -6,11 +6,13 @@ import App from './App.jsx'
 import { RouterProvider } from 'react-router/dom';
 import Destination from './Components/Destination.jsx';
 import Crew from './Components/Crew.jsx';
+import Technology from './Components/Technology.jsx';
 
 const router = createBrowserRouter([
   {path: '/', element: <App/> },
   {path: '/Destination', element: <Destination/> },
   {path: '/Crew', element: <Crew/> },
+  {path: '/Technology', element: <Technology/> },
 ]);
 
 createRoot(document.getElementById('root')).render(

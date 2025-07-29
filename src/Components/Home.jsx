@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import "../assets/css/estilo.css"
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
           </p>
         </div>
         <button className="bg-white text-3xl w-52 h-52 rounded-full items-start">
-          EXPLORE
+          <button className="bg-red-500 w-60 h-60 rounded-full  z-10 hover:bg-red-500">EXPLORE</button>
         </button>
       </div>
     </div>
