@@ -1,7 +1,12 @@
+import { useState } from "react";
 import logo from "../assets/logo/logo1.svg";
 import { Link } from "react-router";
 
 const Header = () => {
+  const [isSelector, setIsSelector] = useState(false);
+
+  const 
+
   return (
     <div className="flex justify-between items-center gap-2">
       <figure>

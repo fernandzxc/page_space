@@ -20,8 +20,13 @@ const Home = () => {
           </p>
         </div>
         <div className="w-72 h-72 flex items-center justify-center">
-          <button className="button">
-            <Link to='/Destination' className="bg-white cursor-pointer text-3xl w-52 h-52 rounded-full align-text-center">EXPLORE</Link>
+          <button className="button flex items-center justify-center">
+            <Link
+              to="/Destination"
+              className="bg-white text-3xl w-52 h-52 rounded-full flex justify-center items-center"
+            >
+              EXPLORE
+            </Link>
           </button>
         </div>
       </div>
