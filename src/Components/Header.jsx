@@ -22,19 +22,21 @@ const Header = () => {
         {navOptions.map((option) => (
           <div
             key={option.id}
-            className=""
+            className="relative"
             onMouseEnter={() => setIsSelector(option.id)}
-            onMouseLeave={() => setIsSelector(null)}
+            onMouseLeave={() => setIsSelector(true)}
           >
             <NavLink
               to={option.path}
               className={({ isActive }) =>
-                `${isActive ? "absolute h-1 bg-white p-1 w-20 " : "left-0 right-0 h-1 bg-white py-9"}`
+                `${isActive ? "text-white" : "hover:text-white"}`
               }
             >
               <div className="flex items-center">{option.name}</div>
             </NavLink>
-            
+            {isSelector === option.id && (
+              <div className="absolute left-0 right-0 h-1 bg-white rounded-t-md animate-pulse-fast" />
+            )}
           </div>
         ))}
       </div>
