@@ -1,23 +1,42 @@
 import { useState } from "react";
 import logo from "../assets/logo/logo1.svg";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Header = () => {
-  const [isSelector, setIsSelector] = useState(false);
+  const [isSelector, setIsSelector] = useState(true);
 
-  const 
+  const navOptions = [
+    { id: 1, path: "/", name: "00 HOME" },
+    { id: 2, path: "/Destination", name: "01 DESTINATION" },
+    { id: 3, path: "/Crew", name: "02 CREW" },
+    { id: 4, path: "/Technology", name: "04 TECHNOLOGY" },
+  ];
 
   return (
     <div className="flex justify-between items-center gap-2">
       <figure>
-        <img src={logo} className="size-full"/>
+        <img src={logo} className="size-full" />
       </figure>
       <hr className="border-1 border-gray-500 w-1/2" />
-      <div className="flex gap-16 w-3/4 py-8 justify-center text-white bg-blue-50/10 backdrop-blur-3xl">
-        <Link to='/'>00 HOME</Link>
-        <Link to='/Destination'>01 DESTINATION</Link>
-        <Link to='/Crew'>02 CREW</Link>
-        <Link to='/Technology'>03 TECHNOLOGY</Link>
+      <div className="flex gap-16 w-3/4 py-10 justify-center text-white bg-blue-50/5 backdrop-blur-3xl">
+        {navOptions.map((option) => (
+          <div
+            key={option.id}
+            className=""
+            onMouseEnter={() => setIsSelector(option.id)}
+            onMouseLeave={() => setIsSelector(null)}
+          >
+            <NavLink
+              to={option.path}
+              className={({ isActive }) =>
+                `${isActive ? "absolute h-1 bg-white p-1 w-20 " : "left-0 right-0 h-1 bg-white py-9"}`
+              }
+            >
+              <div className="flex items-center">{option.name}</div>
+            </NavLink>
+            
+          </div>
+        ))}
       </div>
     </div>
   );
