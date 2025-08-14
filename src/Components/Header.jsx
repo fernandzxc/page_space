@@ -26,17 +26,20 @@ const Header = () => {
             onMouseEnter={() => setIsSelector(option.id)}
             onMouseLeave={() => setIsSelector(null)}
           >
-            <NavLink
-              to={option.path}
-              className={({ isActive }) =>
-                `${isActive ? "text-white" : "hover:text-white"}`
-              }
-            >
-              <div className="flex items-center py-10">{option.name}</div>
+            <NavLink to={option.path}>
+              <div className="flex items-center py-10 ">{option.name}</div>
+              {isSelector === option.id && (
+                <div
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "absolute left-0 right-0 h-1 bg-white rounded-t-md animate-pulse-fast"
+                        : "absolute left-0 right-0 h-1 bg-white rounded-t-md animate-pulse-fast"
+                    }`
+                  }
+                />
+              )}
             </NavLink>
-            {isSelector === option.id &&(
-              <div className="absolute left-0 right-0 h-1 bg-white rounded-t-md animate-pulse-fast" />
-            )}
           </div>
         ))}
       </div>
