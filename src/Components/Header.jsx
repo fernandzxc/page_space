@@ -18,10 +18,10 @@ const Header = () => {
         <img src={logo} className="size-full" />
       </figure>
       <hr className="border-1 border-gray-500 w-1/2" />
-      <div className="flex gap-16 w-3/4 py-1 justify-center text-white bg-blue-50/5 backdrop-blur-3xl">
+      <div className="flex gap-16 w-3/4 py-1 justify-center text-white opacity-90 backdrop-blur-3xl">
         {navOptions.map((option) => {
           const isActive = location.pathname === option.path;
-
+          
           return (
             <div
               key={option.id}
@@ -29,12 +29,11 @@ const Header = () => {
               onMouseEnter={() => setIsSelector(option.id)}
               onMouseLeave={() => setIsSelector(null)}
             >
-              {/* Selector fijo para opción activa */}
+          
               {isActive && (
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-white rounded-t-md z-10"></div>
               )}
 
-              {/* Selector fijo para hover */}
               {isSelector === option.id && (
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-50/40 rounded-t-md opacity-70 animate-pulse-fast z-20"></div>
               )}
@@ -45,7 +44,7 @@ const Header = () => {
                   `block py-10 font-barlow-condensed font-normal tracking-[2.7px] ${
                     isActive
                       ? "text-white font-medium"
-                      : "text-gray-300 hover:text-white transition-colors"
+                      : "text-gray-400 hover:text-white transition-colors"
                   }`
                 }
               >
