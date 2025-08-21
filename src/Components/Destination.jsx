@@ -56,16 +56,20 @@ const Destination = () => {
             <span className="text-gray-500">01</span> PICK YOUR DESTINATION
           </h1>
           <figure className="w-4/6">
-            <img src={current.image} />
+            <img src={current.image} className=""/>
           </figure>
         </div>
         <div className="w-1/2 flex flex-col gap-5 ">
-          <div className="flex gap-5 text-lg">
+          <div className="flex gap-5 text-lg relative">
             {Object.keys(Destination).map((key) => (
               <button
                 key={key}
                 onClick={() => setSelectDestination(key)}
-                className={`destination-btn ${selectDestination === key ? 'active' : ''}`}
+                className={`destination-btn ${
+                  selectDestination === key
+                    ? "active bg-white left-0 right-0 bottom-0 h-1 rounded-2xl"
+                    : "left-0 right-0 bottom-0 h-1 hover:bg-gray-500 rounded-2xl"
+                }`}
               >
                 {Destination[key].name}
               </button>
@@ -73,9 +77,7 @@ const Destination = () => {
           </div>
           <section className="flex flex-col gap-10">
             <h1 className="text-7xl">{current.name}</h1>
-            <p>
-              {current.description}
-            </p>
+            <p>{current.description}</p>
             <hr />
           </section>
           <div className="flex gap-5 justify-around">

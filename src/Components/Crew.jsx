@@ -51,7 +51,11 @@ const Crew = () => {
           <p>{current.bio}</p>
           <div className="flex gap-5">
             {Object.keys(Crew).map((key) => (
-              <button key={key} onClick={() => setSelectCrew(key)} className="w-4 h-4 rounded-full bg-white"></button>
+              <button
+                key={key}
+                onClick={() => setSelectCrew(key)}
+                className={`w-4 h-4 rounded-full cursor-pointer ${selectCrew === key ? ' bg-white' : 'bg-gray-500'}`}
+              ></button>
             ))}
           </div>
         </section>
