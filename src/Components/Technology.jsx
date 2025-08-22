@@ -3,7 +3,6 @@ import Header from "./Header";
 import launch from "../assets/img/technology/image-launch-vehicle-portrait.jpg";
 import capsule from "../assets/img/technology/image-space-capsule-portrait.jpg";
 import spaceport from "../assets/img/technology/image-spaceport-portrait.jpg";
-import Crew from "./Crew";
 
 const Technology = () => {
   const [selectTechnology, setSelectTechnology] = useState("launch");
@@ -38,7 +37,7 @@ const Technology = () => {
     <div className='bg-[url("./assets/img/technology/technology_desktop.jpg")] object-contain bg-cover bg-center h-screen pl-10 pt-10 overflow-hidden'>
       <Header />
 
-      <div className="pt-10 px-14 text-white">
+      <div className="pt-10 pl-14 text-white">
         <h1 className="text-2xl pb-6">
           <span className="text-gray-500">03 </span>SPACE LAUNCH 101
         </h1>
@@ -64,8 +63,8 @@ const Technology = () => {
               <p className="text-xl pt-4">{corrent.description}</p>
             </div>
           </div>
-          <figure className="w-2/5 flex object-cover bg-center">
-            <img src={corrent.image} className="w-[60%] h-[60%]" />
+          <figure className="w-2/5 flex ">
+            <img src={corrent.image} className="w-[60%] h-[60%] object-cover object-left"/>
           </figure>
         </section>
       </div>

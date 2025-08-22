@@ -17,7 +17,7 @@ const Header = () => {
       <figure>
         <img src={logo} className="size-full" />
       </figure>
-      <hr className="border-1 border-gray-500 w-1/2" />
+      <hr className="min-sm:border-1 border-gray-500 w-1/2 " />
       <div className="flex gap-16 w-3/4 py-1 justify-center text-white opacity-90 backdrop-blur-3xl">
         {navOptions.map((option) => {
           const isActive = location.pathname === option.path;

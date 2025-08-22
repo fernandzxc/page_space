@@ -2,8 +2,7 @@
     font-size: 30px;
     width: 208px;
     height: 208px;
-    border-radius: 50%; 
-    
+    border-radius: 50%;    
 }
 
 .button:hover {
@@ -11,4 +10,8 @@
     width: 308px;
     height: 308px;
     transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 425px){
+    
 }
