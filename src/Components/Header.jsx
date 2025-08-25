@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router";
 
 const Header = () => {
   const [isSelector, setIsSelector] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navOptions = [
     { id: "01", path: "/", name: "HOME" },
@@ -12,13 +13,17 @@ const Header = () => {
     { id: "04", path: "/Technology", name: "TECHNOLOGY" },
   ];
 
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  }
+
   return (
     <div className="flex justify-between items-center gap-2">
       <figure>
         <img src={logo} className="size-full" />
       </figure>
-      <hr className="min-sm:border-1 border-gray-500 w-1/2 " />
-      <div className="flex gap-16 w-3/4 py-1 justify-center text-white opacity-90 backdrop-blur-3xl">
+      <hr className="min-sm:border-1 border-gray-500 w-1/2 max-lg:hidden" />
+      <div className="flex gap-16 w-3/4 py-1 justify-center text-white opacity-90 backdrop-blur-3xl max-lg:hidden">
         {navOptions.map((option) => {
           const isActive = location.pathname === option.path;
           
