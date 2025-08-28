@@ -30,7 +30,7 @@ const Header = () => {
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Abrir menú de navegación"
       >
-        {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        {isMenuOpen ? <FiX z-20 size={24} /> : <FiMenu size={24} />}
       </button>
 
       <div className="flex gap-16 w-3/4 py-1 justify-center text-white opacity-90 backdrop-blur-3xl max-lg:hidden">
@@ -73,7 +73,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-blue-950/95 backdrop-blur-3xl z-40 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-64 bg-blue-950 backdrop-blur-3xl z-40 transform transition-transform duration-300 ease-in-out lg:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -115,7 +115,7 @@ const Header = () => {
       {/* Overlay para cerrar el menú al hacer clic fuera */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/20 z-30 md:hidden"
+          className="fixed inset-0 bg-black/20 z-30 lg:hidden"
           onClick={() => setIsMenuOpen(false)}
         ></div>
       )}
