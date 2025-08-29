@@ -26,11 +26,11 @@ const Header = () => {
       <hr className="border-1 border-gray-500 w-1/2 max-lg:hidden" />
 
       <button
-        className="lg:hidden text-white"
+        className="lg:hidden text-white z-50"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Abrir menú de navegación"
       >
-        {isMenuOpen ? <FiX className="z-40" size={24} /> : <FiMenu className="z-40" size={24} />}
+        {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
       </button>
 
       <div className="flex gap-16 w-3/4 py-1 justify-center text-white opacity-90 backdrop-blur-3xl max-lg:hidden">

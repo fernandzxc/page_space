@@ -47,20 +47,20 @@ const Destination = () => {
   const current = Destination[selectDestination];
 
   return (
-    <div className='bg-[url("./assets/img/destination_desktop.jpg")] object-contain bg-cover bg-center h-screen pl-10 pt-10'>
+    <div className='bg-[url("./assets/img/destination/destination_desktop.jpg")] object-contain bg-cover bg-center min-h-screen pl-10 pt-10 max-lg:bg-[url("./assets/img/destination/destination_tablet.jpg")]'>
       <Header />
 
-      <div className="flex w-full h-4/5 justify-around pt-10 px-14 text-white">
+      <div className="flex w-full h-4/5 justify-around pt-10 px-14 text-white max-lg:flex-col max-lg:px-4">
         <div className="flex flex-col gap-5">
-          <h1 className="text-2xl">
+          <h1 className="text-2xl max-sm:text-xl max-sm:text-center">
             <span className="text-gray-500">01</span> PICK YOUR DESTINATION
           </h1>
-          <figure className="w-4/6">
-            <img src={current.image} className=""/>
+          <figure className="max-lg:justify-center flex ">
+            <img src={current.image} className="w-4/6 max-lg:w-5/12"/>
           </figure>
         </div>
-        <div className="w-1/2 flex flex-col gap-5 ">
-          <div className="flex gap-5 text-lg relative">
+        <div className="w-1/2 flex flex-col gap-5 max-lg:w-full max-lg:text-center">
+          <div className="flex gap-5 text-lg relative max-lg:justify-center py-5">
             {Object.keys(Destination).map((key) => (
               <button
                 key={key}
@@ -80,7 +80,7 @@ const Destination = () => {
             <p>{current.description}</p>
             <hr />
           </section>
-          <div className="flex gap-5 justify-around">
+          <div className="flex gap-5 justify-around max-lg:pb-5">
             <div className="text-center">
               <h2 className="text-gray-500">Avg. distance</h2>
               <p className="text-2xl">{current.distance}</p>
