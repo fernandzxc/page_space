@@ -34,7 +34,7 @@ const Technology = () => {
   const corrent = Technology[selectTechnology];
 
   return (
-    <div className='bg-[url("./assets/img/technology/technology_desktop.jpg")] object-contain bg-cover bg-center h-screen pl-10 pt-10 overflow-hidden'>
+    <div className='bg-[url("./assets/img/technology/technology_desktop.jpg")] object-contain bg-cover bg-center min-h-screen pl-10 pt-10 overflow-hidden'>
       <Header />
 
       <div className="pt-10 pl-14 text-white">

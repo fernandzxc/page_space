@@ -39,17 +39,17 @@ const Crew = () => {
   const current = Crew[selectCrew];
 
   return (
-    <div className='bg-[url("./assets/img/crew/crew_desktop.jpg")] object-contain bg-cover bg-center h-dvh pl-10 pt-10 overflow-hidden'>
+    <div className='bg-[url("./assets/img/crew/crew_desktop.jpg")] object-contain bg-cover bg-center min-h-screen pl-10 pt-10 overflow-hidden'>
       <Header />
-      <div className="flex w-full justify-around pt-10 px-14 text-white ">
-        <section className="flex flex-col gap-7 w-1/2 ">
+      <div className="flex w-full justify-around pt-10 px-14 text-white max-lg:flex flex-col">
+        <section className="flex flex-col gap-7 w-1/2 max-lg:w-full">
           <h1 className="text-2xl">
             <span className="text-gray-500">02 </span>MEET YOUR CREW
           </h1>
-          <h2 className="text-3xl text-gray-500">{current.role}</h2>
-          <h3 className="text-5xl">{current.name}</h3>
-          <p>{current.bio}</p>
-          <div className="flex gap-5">
+          <h2 className="text-3xl text-gray-500 max-lg:text-center">{current.role}</h2>
+          <h3 className="text-5xl max-lg:text-center">{current.name}</h3>
+          <p className="max-lg:text-center">{current.bio}</p>
+          <div className="flex gap-5 max-lg:bg-red-400">
             {Object.keys(Crew).map((key) => (
               <button
                 key={key}
