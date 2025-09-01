@@ -34,22 +34,22 @@ const Technology = () => {
   const corrent = Technology[selectTechnology];
 
   return (
-    <div className='bg-[url("./assets/img/technology/technology_desktop.jpg")] object-contain bg-cover bg-center min-h-screen pl-10 pt-10 overflow-hidden'>
+    <div className='bg-[url("./assets/img/technology/technology_desktop.jpg")] object-contain bg-cover bg-center min-h-screen pl-10 pt-10 overflow-hidden max-sm:pl-0'>
       <Header />
 
-      <div className="pt-10 pl-14 text-white">
-        <h1 className="text-2xl pb-6">
+      <div className="pt-10 pl-14 text-white max-lg:pl-0 max-sm:text-center ">
+        <h1 className="text-2xl pb-6 max-sm:text-xl">
           <span className="text-gray-500">03 </span>SPACE LAUNCH 101
         </h1>
-        <section className="flex gap-3">
-          <div className="flex gap-10 w-[55%]">
-            <div className="flex flex-col text-3xl w-20 h-screen gap-10">
+        <section className="flex gap-3 max-lg:flex-col-reverse max-lg:w-screen">
+          <div className="flex gap-10 w-[55%] max-lg:flex-col max-lg:w-full">
+            <div className="flex flex-col text-3xl w-20 h-full gap-10 max-lg:flex-row max-lg:h-auto max-lg:w-auto max-lg:justify-center max-lg:pt-5">
               {Object.keys(Technology).map((key) => (
                 <button
                   key={key}
                   onClick={() => setSelectTechnology(key)}
-                  className={`w-20 border-gray-500 border-2 rounded-full h-20 ${
-                    selectTechnology === key ? 'bg-white text-black' : 'hover:bg-gray-500'
+                  className={`w-20 h-20 border-gray-500 border-2 rounded-full max-lg:w-16 max-lg:h-16 max-sm:text-lg max-sm:w-12 max-sm:h-12 
+                    ${selectTechnology === key ? 'bg-white text-black' : 'hover:bg-gray-500'
                   }`}
                 >
                   {Technology[key].option}
@@ -57,14 +57,19 @@ const Technology = () => {
               ))}
             </div>
 
-            <div className="text-white flex flex-col gap-4 w-[70%]">
+            <div className="text-white flex flex-col gap-4 w-[70%] max-lg:w-[100%] max-lg:text-center">
               <h2 className="text-gray-500 text-xl">THE TERMINOLOGY...</h2>
-              <h1 className="text-6xl">{corrent.name}</h1>
-              <p className="text-xl pt-4">{corrent.description}</p>
+              <h1 className="text-6xl max-lg:text-5xl">{corrent.name}</h1>
+              <p className="text-xl pt-4 max-lg:text-lg max-lg:px-36 max-sm:px-14">
+                {corrent.description}
+              </p>
             </div>
           </div>
-          <figure className="w-2/5 flex ">
-            <img src={corrent.image} className="w-[60%] h-[60%] object-cover object-left"/>
+          <figure className="w-2/5 flex max-lg:w-full max-sm:justify-center">
+            <img
+              src={corrent.image}
+              className="w-[100%] h-[100%] object-cover object-left"
+            />
           </figure>
         </section>
       </div>
